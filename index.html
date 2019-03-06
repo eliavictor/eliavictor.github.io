@@ -6,7 +6,6 @@
 <style type="text/css">
 	.button {
 		color: white;
-		margin-left: 10px; 
 		padding: 20px;
 		border: solid 5px white;
 		}
@@ -14,18 +13,25 @@
 		color: white;
 		font: verdana;
 	}
+	.image {
+		background-image: url("https://cdn.nba.net/nba-drupal-prod/2017-08/SEO-image-NBA-logoman.jpg");
+		background-size: cover;
+		height: 700px;
+	}
 </style>
 </head>
-
-<body style="width: 1000px; margin: 20px 150px; background: black">
-	<h1 class="font">Hello, my name is Elia Victor</h1>
-	<h2 class="font">I'm from Semarang</h2>
-	<p class="font">I like watching NBA</p>
-	<img src="https://cdn.nba.net/nba-drupal-prod/2017-08/SEO-image-NBA-logoman.jpg" style="width: 900px; height:473px; padding: 20px;">
-	<hr>
-	<br>
-	<br>
-	<a href="http://www.nba.com/#/" class="button" style="background: #17408B">Visit NBA.com </a>
-	<a href="https://en.wikipedia.org/wiki/National_Basketball_Association" class="button" style="background: #C9082A">More info about NBA </a>
+<nav style="font-size: 17px; background: black">
+	<h1 class="font">Hello, my name is <a href="https://www.facebook.com/elia.victor.5" target="_blank" style="color: white">Elia Victor</a></h1>
+</nav>
+<body style="margin: 10px 10px ; background: black">
+	<div class="image">
+		<h2 class="font">I'm from Semarang</h2>
+		<p class="font">I like watching NBA</p>
+	</div>
 </body>
+<footer 
+style="margin-top: 50px;">
+	<a href="https://en.wikipedia.org/wiki/National_Basketball_Association" class="button" style="background: #C9082A; margin-right:50px;" target="_blank">More info about NBA </a>
+	<a href="http://www.nba.com/#/" class="button" style="background: #17408B" target="_blank">Visit NBA.com </a>
+</footer>
 </html>

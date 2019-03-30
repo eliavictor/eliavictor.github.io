@@ -2,36 +2,129 @@
 <html>
 
 <head>
-<title>Welcome to my Website</title>
-<style type="text/css">
-	.button {
-		color: white;
-		padding: 20px;
-		border: solid 5px white;
-		}
-	.font {
-		color: white;
-		font: verdana;
-	}
-	.image {
-		background-image: url("https://cdn.nba.net/nba-drupal-prod/2017-08/SEO-image-NBA-logoman.jpg");
-		background-size: cover;
-		height: 700px;
-	}
-</style>
+<title>Welcome to DOM PRACTICE Website</title>
+<link rel="stylesheet" type="text/css" media="screen" href="style.css">
+
 </head>
-<nav style="font-size: 17px; background: black">
+
+<!-- <nav style="font-size: 17px; background: black">
 	<h1 class="font">Hello, my name is <a href="https://www.facebook.com/elia.victor.5" target="_blank" style="color: white">Elia Victor</a></h1>
-</nav>
-<body style="margin: 10px 10px ; background: black">
-	<div class="image">
-		<h2 class="font">I'm from Semarang</h2>
-		<p class="font">I like watching NBA</p>
+</nav> -->
+<body style="background: black">
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+	  	<!-- Modal content -->
+		  <div class="modal-content">
+		    <div class="modal-header">
+		      <span class="close">&times;</span>
+		      <h2>Login</h2>
+		    </div>
+		    <div class="modal-body">
+		      <form class="form">
+				  Username:
+				  <br class="form">
+				  <input id="loginUser" type="text" style="width: 98%; padding: 3px;" required>
+				  <br>
+				  Password:
+				  <br>
+				  <input id="loginPass" type="Password" style="width: 98%; padding: 3px;" required>
+				  <br><br>
+				  <button id="submitLogin" type="submit" style="width: 100%; padding: 10px;background-color: #3593DD; color: black; font-style: bold;">Login</button>
+			  </form> 
+		    </div>
+		    <div class="modal-footer">
+		      <p>DOM PRACTICE WEBSITE</p>
+		    </div>
+		  </div>
+	</div>
+	<div class="topnav">
+		<h3>DOM PRACTICE WEBSITE</h3>
+  		<a id="register">Register</a>
+  		<a id="login">Login</a>
+  		<a class="active" href="#home">Home</a>
+	</div>
+
+	<p id="result" style="color: white; float:right; padding-right: 15px;"></p>
+	
+	<div class="image" style="color: white">
 	</div>
 </body>
-<footer 
+
+<script>
+	// Get the modal
+	var modal = document.getElementById("myModal");
+
+	// Get the button that opens the modal
+	var login = document.getElementById("login");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	var btnLogin = document.getElementById("submitLogin");
+
+	// When the user clicks on the button, open the modal 
+	login.onclick = function() {
+	  modal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	  modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+	    modal.style.display = "none";
+	  }
+	}
+
+	btnLogin.onclick = function(){
+		var textLogin=" ";
+		var username = document.getElementById("loginUser").value;
+		var password = document.getElementById("loginPass").value;
+			if (username == null || username == "") {
+    			textLogin = "Username not registered";
+  			} else if (password == null || password == "") {
+  				textLogin = "Password cannot be empty";
+			} else {
+				textLogin = "Welcome back " + username + "!";
+			}
+		document.getElementById("result").innerHTML = textLogin;
+	}
+
+	document.getElementById("register").addEventListener("click", registerFunc);
+	// document.getElementById("abc").addEventListener("click", myFunc);
+
+	function registerFunc() {
+  		var textRegister=" ";
+  		var usernameReg = prompt("Please enter your username:", "eliavictor");
+  		if (usernameReg == null || usernameReg == "") {
+    		textRegister = "Choose an username!";
+  		} else {
+    	textRegister = "Welcome " + usernameReg + "! You are now registered";
+  	}
+  	document.getElementById("result").innerHTML = textRegister;
+  	}
+
+  	document.getElementById("result").innerHTML = document.getElementById("loginUser").value;
+
+  	// function myFunc() {
+  	// 	var textLogin=" ";
+  	// 	console.log('textLogin')
+  		// var usernameLog = ;
+ //  		if (usernameLog === undefined || usernameLog == "") {
+ //    		textLogin = "Username not registered";
+ //  		} else {
+ //    	textLogin = "Welcome back " + usernameLog + "!";
+	// }
+	// document.getElementById("result").innerHTML = document.getElementById("loginUser").value;
+	// }
+</script>
+
+<!-- <footer 
 style="margin-top: 50px;">
 	<a href="https://en.wikipedia.org/wiki/National_Basketball_Association" class="button" style="background: #C9082A; margin-right:50px;" target="_blank">More info about NBA </a>
 	<a href="http://www.nba.com/#/" class="button" style="background: #17408B" target="_blank">Visit NBA.com </a>
-</footer>
+</footer> -->
 </html>
